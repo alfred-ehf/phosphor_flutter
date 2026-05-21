@@ -11,11 +11,8 @@ void generateExampleAppConstants(List icons) {
 
   final stylesMaps = {
     StyleFileData.regular: <String>[],
-    StyleFileData.thin: <String>[],
-    StyleFileData.light: <String>[],
     StyleFileData.bold: <String>[],
     StyleFileData.fill: <String>[],
-    StyleFileData.duotone: <String>[],
   };
 
   icons.forEach((icon) {
@@ -37,7 +34,7 @@ void generateExampleAppConstants(List icons) {
       ..methods.addAll(
         [
           buildGetterMethod(
-            returnType: 'List<PhosphorIconData>',
+            returnType: 'List<IconData>',
             name: 'icons',
             body: 'allFlatIconsAsMap.values.toList()',
           ),
@@ -47,15 +44,12 @@ void generateExampleAppConstants(List icons) {
             body: 'allFlatIconsAsMap.keys.toList()',
           ),
           buildGetterMethod(
-            returnType: 'Map<String, PhosphorIconData>',
+            returnType: 'Map<String, IconData>',
             name: 'allFlatIconsAsMap',
             body: '''{
       ...regularIcons,
-      ...thinIcons,
-      ...lightIcons,
       ...boldIcons,
       ...fillIcons,
-      ...duotoneIcons,
       }''',
           ),
           for (final entry in stylesMaps.entries)
@@ -70,9 +64,8 @@ void generateExampleAppConstants(List icons) {
   final allFilesLib = Library(
     (libraryBuilder) => libraryBuilder
       ..directives.addAll([
-        Directive.import(
-          'package:phosphor_flutter/phosphor_flutter.dart',
-        ),
+        Directive.import('package:flutter/widgets.dart'),
+        Directive.import('package:phosphor_flutter/phosphor_flutter.dart'),
       ])
       ..body.add(allIconsClass),
   );
@@ -126,7 +119,7 @@ Method buildIconsMapGetterByStyle({
   required List<String> lines,
 }) =>
     buildGetterMethod(
-      returnType: 'Map<String, PhosphorIconData>',
+      returnType: 'Map<String, IconData>',
       name: '${style.styleName}Icons',
       body: '{${lines.join(',')}}',
     );

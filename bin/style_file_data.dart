@@ -7,18 +7,6 @@ enum StyleFileData {
     idx: 0,
   ),
 
-  thin(
-    styleName: 'thin',
-    fontFileName: 'Phosphor-Thin.ttf',
-    idx: 1,
-  ),
-
-  light(
-    styleName: 'light',
-    fontFileName: 'Phosphor-Light.ttf',
-    idx: 2,
-  ),
-
   bold(
     styleName: 'bold',
     fontFileName: 'Phosphor-Bold.ttf',
@@ -29,12 +17,6 @@ enum StyleFileData {
     styleName: 'fill',
     fontFileName: 'Phosphor-Fill.ttf',
     idx: 4,
-  ),
-
-  duotone(
-    styleName: 'duotone',
-    fontFileName: 'Phosphor-Duotone.ttf',
-    idx: 5,
   );
 
   const StyleFileData({

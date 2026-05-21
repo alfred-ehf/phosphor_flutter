@@ -1,5 +1,5 @@
 name: phosphor_flutter
-description: Implementation of Phosphoricons for Flutter. 772 icons and counting. Thin, Light, Regular, Bold, Fill.
+description: Implementation of Phosphoricons for Flutter. Regular, Bold, Fill.
 version: 2.1.0
 maintainer: Rurick Maqueo Poisot @rurickdev
 homepage: https://phosphoricons.com/
@@ -7,16 +7,10 @@ repository: https://github.com/phosphor-icons/phosphor-flutter
 screenshots:
   - description: Regular style icons
     path: meta/screenshot_regular.png
-  - description: Thin style icons
-    path: meta/screenshot_thin.png
-  - description: Light style icons
-    path: meta/screenshot_light.png
   - description: Bold style icons
     path: meta/screenshot_bold.png
   - description: Fill style icons
     path: meta/screenshot_fill.png
-  - description: Duotone style icons
-    path: meta/screenshot_duotone.png
 
 environment:
   sdk: ">=2.12.0 <4.0.0"
@@ -35,10 +29,6 @@ flutter:
     - family: PhosphorBold
       fonts:
         - asset: lib/fonts/Phosphor-Bold.ttf
-          weight: 400
-    - family: PhosphorDuotone
-      fonts:
-        - asset: lib/fonts/Phosphor-Duotone.ttf
           weight: 400
     - family: PhosphorFill
       fonts:
